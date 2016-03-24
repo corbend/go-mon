@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{.Name}}</title>
+</head>
+<body>
+	<div class="container" style="width: 100%; position: relative;">
+		<h1>{{.Name}}</h1>
+		<table style="border: 1px solid black; width: 100%;">
+			<thead>
+				<tr>
+					<th style="border: 1px solid black;">Filesystem</th>
+					<th style="border: 1px solid black;">Size</th>
+					<th style="border: 1px solid black;">Used</th>
+					<th style="border: 1px solid black;">Avail</th>
+					<th style="border: 1px solid black;">Use%</th>
+					<th style="border: 1px solid black;">Mounted on</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{range $index, $element := .Disk}}
+					<tr>
+						<td style="border: 1px solid black;">{{$element.Filesystem}}</td>
+						<td style="border: 1px solid black;">{{$element.Size}}</td>
+						<td style="border: 1px solid black;">{{$element.Used}}</td>
+						<td style="border: 1px solid black;">{{$element.Avail}}</td>
+						<td style="border: 1px solid black;">{{$element.Use}}</td>
+						<td style="border: 1px solid black;">{{$element.Mounted}}</td>
+					</tr>
+				{{end}}
+			</tbody>
+		</table>
+		<h2>Memory Statistics</h2>
+		<table style="border: 1px solid black; width: 100%;">
+			<thead>
+				<tr>
+					<th style="border: 1px solid black;">Swpd</th>
+					<th style="border: 1px solid black;">Free</th>
+					<th style="border: 1px solid black;">Buff</th>
+					<th style="border: 1px solid black;">SwapSi</th>
+					<th style="border: 1px solid black;">SwapSo</th>
+					<th style="border: 1px solid black;">IoBi</th>
+					<th style="border: 1px solid black;">IoBo</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{range $index, $element := .Mem}}
+					<tr>
+						<td style="border: 1px solid black;">{{$element.Swpd}}</td>
+						<td style="border: 1px solid black;">{{$element.Free}}</td>
+						<td style="border: 1px solid black;">{{$element.Buff}}</td>
+						<td style="border: 1px solid black;">{{$element.SwapSi}}</td>
+						<td style="border: 1px solid black;">{{$element.SwapSo}}</td>
+						<td style="border: 1px solid black;">{{$element.IoBi}}</td>
+						<td style="border: 1px solid black;">{{$element.IoBo}}</td>
+					</tr>
+				{{end}}
+			</tbody>
+		</table>
+		<h2>Cpu Statistics</h2>
+		<table style="border: 1px solid black; width: 100%;">
+			<thead>
+				<tr>
+				</tr>
+			</thead>
+			<tbody>
+				{{range $index, $element := .Cpu}}
+					<tr>
+					</tr>
+				{{end}}
+			</tbody>
+		</table>	
+		<h2>Traffic Statistics</h2>
+		<table style="border: 1px solid black; width: 100%;">
+			<thead>
+				<tr>
+				</tr>
+			</thead>
+			<tbody>
+				{{range $index, $element := .Traf}}
+					<tr>
+					</tr>
+				{{end}}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
